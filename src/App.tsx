@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import { MainApp } from "./components/MainApp";
 import { AlertProvider } from "./contexts/AlertContext";
 import { AuthProvider } from "./contexts/AuthContext";
+import Disciplines from "./pages/Disciplines";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 
@@ -26,7 +27,9 @@ function App() {
             <Routes>
               <Route path="/" element={<SignUp />} />
               <Route path="/login" element={<SignIn />} />
-              <Route path="app" element={<MainApp />} />
+              <Route path="app" element={<MainApp />}>
+                <Route path="/app/disciplinas" element={<Disciplines />} />
+              </Route>
             </Routes>
           </BrowserRouter>
           <Alert />

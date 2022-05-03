@@ -129,11 +129,6 @@ function getUniqueTeachers(teachersDisciplines: TestByTeacher[]) {
         (teacherDiscipline) => teacherDiscipline.teacher.name
       )
     ),
-    // ...new Set(
-    //   teachersDisciplines.map(
-    //     (teacherDiscipline) => teacherDiscipline.teacher.name
-    //   )
-    // ),
   ];
 }
 

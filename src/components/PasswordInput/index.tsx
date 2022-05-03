@@ -8,7 +8,7 @@ import {
   SxProps,
   Theme,
 } from "@mui/material";
-import React, { useState, ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 interface Props {
   name: string;
@@ -18,7 +18,7 @@ interface Props {
   sx?: SxProps<Theme> | undefined;
 }
 
-function PasswordInput({ sx, label, value, onChange }: Props) {
+function PasswordInput({ name, sx, label, value, onChange }: Props) {
   const [showPassword, setShowPassword] = useState(false);
 
   function handleIconClick() {
@@ -27,9 +27,10 @@ function PasswordInput({ sx, label, value, onChange }: Props) {
 
   return (
     <FormControl sx={sx} variant="outlined">
-      <InputLabel htmlFor="outlined-adorment-password">{label}</InputLabel>
+      <InputLabel htmlFor={name}>{label}</InputLabel>
       <OutlinedInput
-        id="outlined-adorment-password"
+        id={name}
+        name={name}
         type={showPassword ? "text" : "password"}
         value={value}
         onChange={onChange}

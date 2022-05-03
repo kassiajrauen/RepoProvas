@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import { AxiosError } from "axios";
 import React, { useState } from "react";
-import { ReactComponent as Logo } from "../assets/logo.svg";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { ReactComponent as Logo } from "../assets/logo.svg";
 import PasswordInput from "../components/PasswordInput";
 import Form from "../components/Form";
 import useAlert from "../hooks/useAlert";
@@ -46,9 +46,8 @@ interface FormData {
 }
 
 function SignUp() {
-  const navigate = useNavigate();
-
   const { setMessage } = useAlert();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",

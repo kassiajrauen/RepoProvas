@@ -8,13 +8,13 @@ import {
 } from "@mui/material";
 import { AxiosError } from "axios";
 import React, { useState } from "react";
-import { ReactComponent as Logo } from "../assets/logo.svg";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import PasswordInput from "../components/PasswordInput";
+import { ReactComponent as Logo } from "../assets/logo.svg";
 import Form from "../components/Form";
+import PasswordInput from "../components/PasswordInput";
 import useAlert from "../hooks/useAlert";
-import api from "../services/api";
 import useAuth from "../hooks/useAuth";
+import api from "../services/api";
 
 const styles = {
   container: {
@@ -46,11 +46,9 @@ interface FormData {
 }
 
 function SignIn() {
-  const navigate = useNavigate();
-
   const { signIn } = useAuth();
   const { setMessage } = useAlert();
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -86,6 +84,7 @@ function SignIn() {
         });
         return;
       }
+
       setMessage({
         type: "error",
         text: "Erro, tente novamente em alguns segundos!",

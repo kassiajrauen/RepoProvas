@@ -22,7 +22,7 @@ async function signUp(signUpData: UserData) {
 }
 
 async function signIn(signInData: UserData) {
-  return baseAPI.post<{ token: string }>("/sign-in", signInData);
+  return baseAPI.post<{ token: string }>("/login", signInData);
 }
 
 export interface Term {
